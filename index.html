@@ -186,6 +186,19 @@
       color: var(--accent);
       transform: translateY(-1px);
     }
+    .btn-appstore {
+      background: #3FD975;
+      color: #0B1C12;
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 0.9rem 2.25rem;
+      border: none;
+    }
+    .btn-appstore:hover {
+      background: #5aefac;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(63, 217, 117, 0.45);
+    }
 
     /* ── GETTING STARTED ── */
     .steps-grid {
@@ -426,6 +439,10 @@
       <h1>Plant<span>AI</span></h1>
       <p class="tagline">Your personal plant health companion</p>
       <div class="hero-actions">
+        <a class="btn btn-appstore" href="https://apps.apple.com/app/plantalai/id6771919979" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="18" height="18" fill="currentColor" style="flex-shrink:0"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          Download on the App Store
+        </a>
         <a class="btn btn-primary" href="#getting-started">Get Started</a>
         <a class="btn btn-outline" href="#contact">Contact Support</a>
       </div>
@@ -444,7 +461,7 @@
         <div class="step-card">
           <div class="step-num">📷</div>
           <h3>2. Add Your First Plant</h3>
-          <p>Tap the <strong>+</strong> button on the home screen, then photograph your plant or search by name. PlantAI identifies the species instantly.</p>
+          <p>Tap the <strong>+</strong> button on the home screen and photograph your plant. PlantAI identifies the species instantly.</p>
         </div>
         <div class="step-card">
           <div class="step-num">🔍</div>
@@ -454,7 +471,7 @@
         <div class="step-card">
           <div class="step-num">💧</div>
           <h3>4. Set Watering Reminders</h3>
-          <p>PlantAI suggests a watering schedule based on your plant species and local climate. Approve it and receive timely push notifications.</p>
+          <p>PlantAI suggests a watering schedule based on your plant species. Approve it and receive timely push notifications.</p>
         </div>
         <div class="step-card">
           <div class="step-num">🔔</div>
@@ -478,9 +495,7 @@
         <details>
           <summary>How do I add a new plant?</summary>
           <div class="faq-body">
-            Tap the <strong>+</strong> icon in the top-right corner of the Home screen. You can either:<br><br>
-            <strong>Take a photo</strong> — point your camera at the plant and PlantAI will identify it automatically.<br>
-            <strong>Search by name</strong> — type the common or scientific name and select from the results.<br><br>
+            Tap the <strong>+</strong> icon in the top-right corner of the Home screen, then photograph your plant and PlantAI will identify it automatically.<br><br>
             Once identified, give your plant a nickname, confirm the species, and it will appear in your collection. You can add unlimited plants with any PlantAI plan.
           </div>
         </details>
@@ -488,8 +503,8 @@
         <details>
           <summary>How accurate is the AI diagnosis?</summary>
           <div class="faq-body">
-            PlantAI uses a multi-stage vision model trained on millions of plant images. In controlled testing, species identification reaches <strong>95 % accuracy</strong> and disease detection reaches <strong>91 % accuracy</strong> across common houseplants and garden species.<br><br>
-            Accuracy is highest when images are:<br>
+            PlantAI uses GPT-4o to analyse your plant photos. Accuracy is highest when images are taken in good lighting conditions.<br><br>
+            For best results, ensure your photos are:<br>
             <ul style="margin-top:0.5rem; padding-left:1.25rem;">
               <li>Well-lit with natural or soft artificial light</li>
               <li>In focus and taken at close range (20–40 cm)</li>
@@ -507,7 +522,7 @@
             <strong>1. Check permissions</strong> — go to your phone's Settings → PlantAI → ensure Camera access is set to <em>Allow</em>.<br>
             <strong>2. Restart the app</strong> — fully close PlantAI and reopen it.<br>
             <strong>3. Restart your device</strong> — a reboot often resolves camera conflicts with other apps.<br>
-            <strong>4. Check for updates</strong> — open the App Store or Google Play and update to the latest version of PlantAI.<br>
+            <strong>4. Check for updates</strong> — open the App Store and update to the latest version of PlantAI.<br>
             <strong>5. Re-install the app</strong> — your data is backed up to the cloud, so uninstalling and reinstalling will not cause data loss.<br><br>
             If the problem persists, <a href="#contact">contact support</a> with your device model and OS version.
           </div>
@@ -516,8 +531,8 @@
         <details>
           <summary>How do watering reminders work?</summary>
           <div class="faq-body">
-            When you add a plant, PlantAI automatically calculates a recommended watering interval based on the species' needs, your region's climate data, and the current season.<br><br>
-            You can customise the schedule at any time by opening a plant's profile, tapping <strong>Care Schedule</strong>, and adjusting the frequency or time of day.<br><br>
+            When you add a plant, PlantAI automatically calculates a recommended watering interval based on the species' needs and the current season.<br><br>
+            You can customise the schedule at any time by opening the plant's <strong>Plant Profile</strong> screen and adjusting the frequency or time of day.<br><br>
             Reminders are delivered as push notifications. If you are not receiving them, check that notifications are enabled for PlantAI in your device settings and that Do Not Disturb mode is not active. You can also manage all reminders from the <strong>Alerts</strong> tab inside the app.
           </div>
         </details>
@@ -525,10 +540,8 @@
         <details>
           <summary>How do I delete a plant from my collection?</summary>
           <div class="faq-body">
-            To remove a plant:<br><br>
-            <strong>iOS</strong> — swipe left on the plant card on the Home screen and tap <em>Delete</em>, or open the plant's profile, scroll to the bottom, and tap <em>Remove Plant</em>.<br>
-            <strong>Android</strong> — long-press the plant card and select <em>Delete</em>, or open the plant's profile, tap the menu icon (⋮), and choose <em>Remove Plant</em>.<br><br>
-            Deletion is permanent and removes all associated health check history, photos, and care logs. If you only want to hide a plant temporarily, use the <em>Archive</em> option instead.
+            To remove a plant, swipe left on the plant card on the Home screen and tap <em>Delete</em>, or open the plant's profile, scroll to the bottom, and tap <em>Remove Plant</em>.<br><br>
+            Deletion is permanent and removes all associated health check history, photos, and care logs.
           </div>
         </details>
 
@@ -539,11 +552,53 @@
             <ul>
               <li><strong>Account data</strong> — email address and display name used to identify your account.</li>
               <li><strong>Plant photos</strong> — images you upload for identification and health analysis. These are processed by our AI and stored securely.</li>
-              <li><strong>Location (optional)</strong> — approximate location used to tailor watering schedules to local climate. Never shared with third parties.</li>
               <li><strong>Usage analytics</strong> — anonymised, aggregated data used to improve the app. No personally identifiable information is included.</li>
             </ul>
             <br>
             We do <strong>not</strong> sell your data to advertisers. You can request full deletion of your account and data at any time by contacting <a href="mailto:official.plantai@gmail.com">official.plantai@gmail.com</a>. See the Privacy Policy below for full details.
+          </div>
+        </details>
+
+        <details>
+          <summary>What happens to my data if I delete my account?</summary>
+          <div class="faq-body">
+            If you delete your account, all of your personal data — including your plant collection, health check history, photos, and care logs — is permanently deleted from our servers within 30 days. This action cannot be undone.<br><br>
+            To request account deletion, contact us at <a href="mailto:official.plantai@gmail.com">official.plantai@gmail.com</a>.
+          </div>
+        </details>
+
+        <details>
+          <summary>Can I use PlantAI without internet?</summary>
+          <div class="faq-body">
+            The camera and photo capture features work offline — you can photograph your plants at any time without a connection. However, AI analysis (species identification and health checks) requires an active internet connection to process your images. Results will not be available until connectivity is restored.
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I log that I've watered my plant?</summary>
+          <div class="faq-body">
+            To log a watering, go to the <strong>Dashboard</strong> and find your plant in the <strong>Care Due Today</strong> section, then tap the <strong>Log Watering</strong> button.<br><br>
+            You can also log a watering from the <strong>Alerts</strong> tab — find the relevant care alert and tap <strong>Log Watering</strong> to mark it as complete.
+          </div>
+        </details>
+
+        <details>
+          <summary>What do the health status badges mean?</summary>
+          <div class="faq-body">
+            Each plant in your collection displays a health status badge to give you a quick overview of its condition:<br><br>
+            <ul style="margin-top:0.5rem; padding-left:1.25rem;">
+              <li><strong>Thriving</strong> — the plant is healthy and all care tasks are up to date.</li>
+              <li><strong>Needs Water</strong> — a watering task is due or overdue.</li>
+              <li><strong>Stress Detected</strong> — the AI has flagged a potential health issue that requires your attention.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I update my name or email?</summary>
+          <div class="faq-body">
+            You can update your display name at any time by going to the <strong>Settings</strong> screen and tapping your name.<br><br>
+            Email address changes require additional verification to protect your account — please contact us at <a href="mailto:official.plantai@gmail.com">official.plantai@gmail.com</a> and our support team will assist you.
           </div>
         </details>
 
@@ -568,7 +623,7 @@
     <!-- PRIVACY POLICY -->
     <section id="privacy">
       <h2>Privacy <span class="accent">Policy</span></h2>
-      <p class="section-sub">Last updated: May 2025</p>
+      <p class="section-sub">Last updated: May 2026</p>
 
       <div class="privacy-grid">
         <div class="privacy-card">
@@ -586,11 +641,6 @@
           <h4>Right to deletion</h4>
           <p>You may request complete deletion of your account and all associated data at any time by emailing our support team.</p>
         </div>
-        <div class="privacy-card">
-          <div class="icon">📍</div>
-          <h4>Optional location</h4>
-          <p>Location access is entirely optional and is only used to improve watering schedule accuracy — never shared externally.</p>
-        </div>
       </div>
 
       <div class="privacy-prose">
@@ -603,7 +653,6 @@
         <ul>
           <li><strong>Account information:</strong> email address and display name provided at registration.</li>
           <li><strong>Plant data:</strong> photos, nicknames, species identification results, health check reports, and care notes you create.</li>
-          <li><strong>Location data (optional):</strong> approximate geographic location, collected only if you grant permission, used solely to calibrate climate-aware care schedules.</li>
           <li><strong>Device information:</strong> device model, operating system version, and app version, used for bug diagnosis and compatibility improvements.</li>
           <li><strong>Analytics:</strong> anonymised and aggregated usage data (screens visited, features used) with no personally identifiable information.</li>
         </ul>
@@ -643,7 +692,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
-      <span class="footer-copy">© 2025 PlantAI. All rights reserved.</span>
+      <span class="footer-copy">© 2026 PlantAI. All rights reserved.</span>
       <ul class="footer-links">
         <li><a href="#getting-started">Get Started</a></li>
         <li><a href="#faq">FAQ</a></li>
