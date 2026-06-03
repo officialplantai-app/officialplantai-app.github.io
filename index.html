@@ -407,6 +407,28 @@
     }
     .footer-links a:hover { color: var(--accent); }
 
+    /* ── CONFIRMATION BANNER ── */
+    #confirm-banner {
+      display: none;
+      width: 100%;
+      background: #3FD975;
+      color: #0B1C12;
+      text-align: center;
+      padding: 0.875rem 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      line-height: 1.5;
+    }
+    #confirm-banner.visible {
+      display: block;
+      animation: bannerFadeIn 0.5s ease both;
+    }
+    @keyframes bannerFadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       .nav-links { display: none; }
@@ -417,6 +439,11 @@
   </style>
 </head>
 <body>
+
+  <!-- CONFIRMATION BANNER -->
+  <div id="confirm-banner">
+    ✓ Email confirmed — welcome to PlantAI! You can now return to the app and sign in.
+  </div>
 
   <!-- NAV -->
   <nav>
@@ -701,6 +728,21 @@
       </ul>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var search = window.location.search;
+      var hash   = window.location.hash;
+      var show =
+        search.indexOf('confirmed=true')  !== -1 ||
+        search.indexOf('type=signup')     !== -1 ||
+        hash.indexOf('confirmation')      !== -1 ||
+        hash.indexOf('type=signup')       !== -1;
+      if (show) {
+        document.getElementById('confirm-banner').classList.add('visible');
+      }
+    })();
+  </script>
 
 </body>
 </html>
