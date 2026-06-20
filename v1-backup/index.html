@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PlantAI – Support</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0B1C12;
+      --bg-card:   #122018;
+      --bg-elevated: #1a2e20;
+      --accent:    #3FD975;
+      --accent-dim: rgba(63, 217, 117, 0.12);
+      --accent-mid: rgba(63, 217, 117, 0.25);
+      --text:      #E8F5EC;
+      --text-muted: #7FA98A;
+      --border:    rgba(63, 217, 117, 0.15);
+      --radius:    14px;
+      --radius-sm: 8px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 28, 18, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 clamp(1rem, 5vw, 4rem);
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .wordmark {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .wordmark span { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── LAYOUT ── */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 clamp(1rem, 5vw, 4rem);
+    }
+
+    section { padding: 5rem 0; }
+    section + section { border-top: 1px solid var(--border); }
+
+    h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+    h2 .accent { color: var(--accent); }
+
+    .section-sub {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      padding: 7rem 0 5rem;
+      text-align: center;
+      border-top: none;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--accent-dim);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 0.35rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    #hero h1 {
+      font-size: clamp(2.8rem, 8vw, 5rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      margin-bottom: 1rem;
+    }
+    #hero h1 span { color: var(--accent); }
+    .tagline {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: var(--text-muted);
+      font-weight: 400;
+      margin-bottom: 2.5rem;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      border-radius: 100px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #0B1C12;
+    }
+    .btn-primary:hover {
+      background: #5aefac;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 30px rgba(63, 217, 117, 0.3);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover {
+      background: var(--accent-dim);
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+    .btn-appstore {
+      background: #3FD975;
+      color: #0B1C12;
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 0.9rem 2.25rem;
+      border: none;
+    }
+    .btn-appstore:hover {
+      background: #5aefac;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(63, 217, 117, 0.45);
+    }
+
+    /* ── GETTING STARTED ── */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+    .step-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      transition: border-color 0.2s, transform 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .step-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .step-card:hover { border-color: rgba(63, 217, 117, 0.4); transform: translateY(-2px); }
+    .step-card:hover::before { opacity: 1; }
+    .step-num {
+      width: 40px;
+      height: 40px;
+      background: var(--accent-dim);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .step-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+    .step-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── FAQ ── */
+    .faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    details {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    details[open] { border-color: rgba(63, 217, 117, 0.4); }
+    details[open] summary { color: var(--accent); }
+    summary {
+      padding: 1.25rem 1.5rem;
+      font-weight: 600;
+      font-size: 0.975rem;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      color: var(--text);
+      transition: color 0.2s;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: '+';
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: var(--accent);
+      flex-shrink: 0;
+      transition: transform 0.25s;
+    }
+    details[open] summary::after { transform: rotate(45deg); }
+    .faq-body {
+      padding: 0 1.5rem 1.25rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+    }
+    .faq-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ── CONTACT ── */
+    .contact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .contact-card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+    .contact-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .contact-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0;
+    }
+    .contact-text { flex: 1; min-width: 200px; }
+    .response-time {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--accent-dim);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 0.75rem;
+    }
+    .response-time::before {
+      content: '●';
+      font-size: 0.5rem;
+    }
+
+    /* ── PRIVACY ── */
+    .privacy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+    .privacy-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+    .privacy-card .icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .privacy-card h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .privacy-card p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.65; }
+    .privacy-prose {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem 2.5rem;
+    }
+    .privacy-prose h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 1.5rem 0 0.5rem;
+    }
+    .privacy-prose h3:first-child { margin-top: 0; }
+    .privacy-prose p, .privacy-prose ul {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+    .privacy-prose ul { padding-left: 1.25rem; }
+    .privacy-prose ul li { margin-bottom: 0.25rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem clamp(1rem, 5vw, 4rem);
+      text-align: center;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+    .footer-links a {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--accent); }
+
+    /* ── CONFIRMATION BANNER ── */
+    #confirm-banner {
+      display: none;
+      width: 100%;
+      background: #3FD975;
+      color: #0B1C12;
+      text-align: center;
+      padding: 0.875rem 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      line-height: 1.5;
+    }
+    #confirm-banner.visible {
+      display: block;
+      animation: bannerFadeIn 0.5s ease both;
+    }
+    @keyframes bannerFadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .contact-card { flex-direction: column; text-align: center; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .privacy-prose { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CONFIRMATION BANNER -->
+  <div id="confirm-banner">
+    ✓ Email confirmed — welcome to PlantAI! You can now return to the app and sign in.
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a class="wordmark" href="#hero">Plant<span>AI</span></a>
+      <ul class="nav-links">
+        <li><a href="#getting-started">Get Started</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-badge">Support Centre</div>
+      <h1>Plant<span>AI</span></h1>
+      <p class="tagline">Your personal plant health companion</p>
+      <div class="hero-actions">
+        <a class="btn btn-appstore" href="https://apps.apple.com/app/plantalai/id6771919979" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="18" height="18" fill="currentColor" style="flex-shrink:0"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          Download on the App Store
+        </a>
+        <a class="btn btn-primary" href="#getting-started">Get Started</a>
+        <a class="btn btn-outline" href="#contact">Contact Support</a>
+      </div>
+    </section>
+
+    <!-- GETTING STARTED -->
+    <section id="getting-started">
+      <h2>Getting <span class="accent">Started</span></h2>
+      <p class="section-sub">Everything you need to begin caring for your plants with AI.</p>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">🌱</div>
+          <h3>1. Create an Account</h3>
+          <p>Download PlantAI and sign up with your email. Your plant data is tied to your account and synced securely to the cloud.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">📷</div>
+          <h3>2. Add Your First Plant</h3>
+          <p>Tap the <strong>+</strong> button on the home screen and photograph your plant. PlantAI identifies the species instantly.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">🔍</div>
+          <h3>3. Run a Health Check</h3>
+          <p>Navigate to the Health Check tab and take a photo. Our AI analyses leaves, stems, and colour to detect pests, diseases, and nutrient deficiencies.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">💧</div>
+          <h3>4. Set Watering Reminders</h3>
+          <p>PlantAI suggests a watering schedule based on your plant species. Approve it and receive timely push notifications.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">🔔</div>
+          <h3>5. Enable Alerts</h3>
+          <p>Turn on smart alerts so PlantAI can notify you whenever a health issue is detected or a care task is overdue.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">📊</div>
+          <h3>6. Track Progress</h3>
+          <p>View your plant's full health history, past diagnoses, and care logs all in one place on the Plant Profile screen.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <h2>Frequently Asked <span class="accent">Questions</span></h2>
+      <p class="section-sub">Quick answers to the most common questions.</p>
+      <div class="faq-list">
+
+        <details>
+          <summary>How do I add a new plant?</summary>
+          <div class="faq-body">
+            Tap the <strong>+</strong> icon in the top-right corner of the Home screen, then photograph your plant and PlantAI will identify it automatically.<br><br>
+            Once identified, give your plant a nickname, confirm the species, and it will appear in your collection. You can add unlimited plants with any PlantAI plan.
+          </div>
+        </details>
+
+        <details>
+          <summary>How accurate is the AI diagnosis?</summary>
+          <div class="faq-body">
+            PlantAI uses GPT-4o to analyse your plant photos. Accuracy is highest when images are taken in good lighting conditions.<br><br>
+            For best results, ensure your photos are:<br>
+            <ul style="margin-top:0.5rem; padding-left:1.25rem;">
+              <li>Well-lit with natural or soft artificial light</li>
+              <li>In focus and taken at close range (20–40 cm)</li>
+              <li>Showing the affected area (yellowing leaf, spotted stem, etc.)</li>
+            </ul>
+            <br>
+            For rare species or unusual symptoms, we recommend confirming AI suggestions with a local horticulturalist.
+          </div>
+        </details>
+
+        <details>
+          <summary>The camera isn't working — what should I do?</summary>
+          <div class="faq-body">
+            If the camera is unresponsive or the app cannot access it, try these steps in order:<br><br>
+            <strong>1. Check permissions</strong> — go to your phone's Settings → PlantAI → ensure Camera access is set to <em>Allow</em>.<br>
+            <strong>2. Restart the app</strong> — fully close PlantAI and reopen it.<br>
+            <strong>3. Restart your device</strong> — a reboot often resolves camera conflicts with other apps.<br>
+            <strong>4. Check for updates</strong> — open the App Store and update to the latest version of PlantAI.<br>
+            <strong>5. Re-install the app</strong> — your data is backed up to the cloud, so uninstalling and reinstalling will not cause data loss.<br><br>
+            If the problem persists, <a href="#contact">contact support</a> with your device model and OS version.
+          </div>
+        </details>
+
+        <details>
+          <summary>How do watering reminders work?</summary>
+          <div class="faq-body">
+            When you add a plant, PlantAI automatically calculates a recommended watering interval based on the species' needs and the current season.<br><br>
+            You can customise the schedule at any time by opening the plant's <strong>Plant Profile</strong> screen and adjusting the frequency or time of day.<br><br>
+            Reminders are delivered as push notifications. If you are not receiving them, check that notifications are enabled for PlantAI in your device settings and that Do Not Disturb mode is not active. You can also manage all reminders from the <strong>Alerts</strong> tab inside the app.
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I delete a plant from my collection?</summary>
+          <div class="faq-body">
+            To remove a plant, swipe left on the plant card on the Home screen and tap <em>Delete</em>, or open the plant's profile, scroll to the bottom, and tap <em>Remove Plant</em>.<br><br>
+            Deletion is permanent and removes all associated health check history, photos, and care logs.
+          </div>
+        </details>
+
+        <details>
+          <summary>What data does PlantAI collect and how is it used?</summary>
+          <div class="faq-body">
+            PlantAI collects only what is necessary to deliver the service:<br><br>
+            <ul>
+              <li><strong>Account data</strong> — email address and display name used to identify your account.</li>
+              <li><strong>Plant photos</strong> — images you upload for identification and health analysis. These are processed by our AI and stored securely.</li>
+              <li><strong>Usage analytics</strong> — anonymised, aggregated data used to improve the app. No personally identifiable information is included.</li>
+            </ul>
+            <br>
+            We do <strong>not</strong> sell your data to advertisers. You can request full deletion of your account and data at any time by contacting <a href="mailto:official.plantai@gmail.com">official.plantai@gmail.com</a>. See the Privacy Policy below for full details.
+          </div>
+        </details>
+
+        <details>
+          <summary>What happens to my data if I delete my account?</summary>
+          <div class="faq-body">
+            If you delete your account, all of your personal data — including your plant collection, health check history, photos, and care logs — is permanently deleted from our servers within 30 days. This action cannot be undone.<br><br>
+            To request account deletion, contact us at <a href="mailto:official.plantai@gmail.com">official.plantai@gmail.com</a>.
+          </div>
+        </details>
+
+        <details>
+          <summary>Can I use PlantAI without internet?</summary>
+          <div class="faq-body">
+            The camera and photo capture features work offline — you can photograph your plants at any time without a connection. However, AI analysis (species identification and health checks) requires an active internet connection to process your images. Results will not be available until connectivity is restored.
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I log that I've watered my plant?</summary>
+          <div class="faq-body">
+            To log a watering, go to the <strong>Dashboard</strong> and find your plant in the <strong>Care Due Today</strong> section, then tap the <strong>Log Watering</strong> button.<br><br>
+            You can also log a watering from the <strong>Alerts</strong> tab — find the relevant care alert and tap <strong>Log Watering</strong> to mark it as complete.
+          </div>
+        </details>
+
+        <details>
+          <summary>What do the health status badges mean?</summary>
+          <div class="faq-body">
+            Each plant in your collection displays a health status badge to give you a quick overview of its condition:<br><br>
+            <ul style="margin-top:0.5rem; padding-left:1.25rem;">
+              <li><strong>Thriving</strong> — the plant is healthy and all care tasks are up to date.</li>
+              <li><strong>Needs Water</strong> — a watering task is due or overdue.</li>
+              <li><strong>Stress Detected</strong> — the AI has flagged a potential health issue that requires your attention.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I update my name or email?</summary>
+          <div class="faq-body">
+            You can update your display name at any time by going to the <strong>Settings</strong> screen and tapping your name.<br><br>
+            Email address changes require additional verification to protect your account — please contact us at <a href="mailto:official.plantai@gmail.com">official.plantai@gmail.com</a> and our support team will assist you.
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact <span class="accent">Support</span></h2>
+      <p class="section-sub">Our team is ready to help with any questions or issues.</p>
+      <div class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-text">
+          <h3>Email Support</h3>
+          <p>Send us a detailed description of your issue, including your device model, OS version, and any screenshots that may help. We'll get back to you as quickly as possible.</p>
+          <div class="response-time">Typical response within 24–48 hours</div>
+        </div>
+        <a class="btn btn-primary" href="mailto:official.plantai@gmail.com">Email Us</a>
+      </div>
+    </section>
+
+    <!-- PRIVACY POLICY -->
+    <section id="privacy">
+      <h2>Privacy <span class="accent">Policy</span></h2>
+      <p class="section-sub">Last updated: May 2026</p>
+
+      <div class="privacy-grid">
+        <div class="privacy-card">
+          <div class="icon">🔒</div>
+          <h4>Your data is encrypted</h4>
+          <p>All data in transit is protected by TLS 1.3 and data at rest is AES-256 encrypted on our servers.</p>
+        </div>
+        <div class="privacy-card">
+          <div class="icon">🚫</div>
+          <h4>Never sold to advertisers</h4>
+          <p>We do not sell, rent, or trade your personal information to any third party for advertising purposes, ever.</p>
+        </div>
+        <div class="privacy-card">
+          <div class="icon">🗑️</div>
+          <h4>Right to deletion</h4>
+          <p>You may request complete deletion of your account and all associated data at any time by emailing our support team.</p>
+        </div>
+      </div>
+
+      <div class="privacy-prose">
+
+        <h3>1. Who We Are</h3>
+        <p>PlantAI ("we", "our", or "us") is the developer of the PlantAI mobile application. For privacy inquiries contact us at <a href="mailto:official.plantai@gmail.com" style="color:var(--accent)">official.plantai@gmail.com</a>.</p>
+
+        <h3>2. Information We Collect</h3>
+        <p>We collect the following categories of information when you use PlantAI:</p>
+        <ul>
+          <li><strong>Account information:</strong> email address and display name provided at registration.</li>
+          <li><strong>Plant data:</strong> photos, nicknames, species identification results, health check reports, and care notes you create.</li>
+          <li><strong>Device information:</strong> device model, operating system version, and app version, used for bug diagnosis and compatibility improvements.</li>
+          <li><strong>Analytics:</strong> anonymised and aggregated usage data (screens visited, features used) with no personally identifiable information.</li>
+        </ul>
+
+        <h3>3. How We Use Your Information</h3>
+        <ul>
+          <li>To provide, maintain, and improve the PlantAI service.</li>
+          <li>To send care reminders, alerts, and in-app notifications you have opted into.</li>
+          <li>To train and improve our AI models using anonymised, aggregated image data. Individual photos are never attributed to a user in training datasets.</li>
+          <li>To respond to support requests and troubleshoot technical issues.</li>
+          <li>To comply with legal obligations.</li>
+        </ul>
+
+        <h3>4. Data Sharing</h3>
+        <p>We do not sell your personal data. We may share limited data with trusted service providers (cloud hosting, analytics) strictly to operate the service, under data processing agreements that prohibit them from using your data for any other purpose. We may disclose data if required by law or to protect our legal rights.</p>
+
+        <h3>5. Data Retention</h3>
+        <p>We retain your account data and plant records for as long as your account is active. If you delete your account, we will permanently remove your personal data within 30 days, except where retention is required by law.</p>
+
+        <h3>6. Your Rights</h3>
+        <p>Depending on your location you may have the right to access, correct, export, or delete your personal data. To exercise any of these rights, email us at <a href="mailto:official.plantai@gmail.com" style="color:var(--accent)">official.plantai@gmail.com</a>. We will respond within 30 days.</p>
+
+        <h3>7. Children's Privacy</h3>
+        <p>PlantAI is not directed at children under 13. We do not knowingly collect personal data from children. If you believe we have inadvertently collected such data, please contact us immediately.</p>
+
+        <h3>8. Changes to This Policy</h3>
+        <p>We may update this policy from time to time. When we make material changes we will notify you via the app or email. Continued use of PlantAI after changes take effect constitutes acceptance of the revised policy.</p>
+
+        <h3>9. Contact</h3>
+        <p>For any privacy-related questions or to submit a data request, contact us at <a href="mailto:official.plantai@gmail.com" style="color:var(--accent)">official.plantai@gmail.com</a>.</p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">© 2026 PlantAI. All rights reserved.</span>
+      <ul class="footer-links">
+        <li><a href="#getting-started">Get Started</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#privacy">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var search = window.location.search;
+      var hash   = window.location.hash;
+      var show =
+        search.indexOf('confirmed=true')  !== -1 ||
+        search.indexOf('type=signup')     !== -1 ||
+        hash.indexOf('confirmation')      !== -1 ||
+        hash.indexOf('type=signup')       !== -1;
+      if (show) {
+        document.getElementById('confirm-banner').classList.add('visible');
+      }
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git ls-tree *)",
+      "PowerShell(dir \"C:\\\\Users\\\\markk\\\\Desktop\\\\PlantAI\\\\website\" -Recurse | Select-Object FullName | ForEach-Object { $_.FullName.Replace\\(\"C:\\\\Users\\\\markk\\\\Desktop\\\\PlantAI\\\\website\\\\\", \"\"\\) })"
+    ]
+  }
+}
