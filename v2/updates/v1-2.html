@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0B1C12" />
+  <title>v1.2 · Coming Soon · PlantAI</title>
+  <meta name="description" content="A preview of PlantAI v1.2. A smarter AI, an AI Care Plan for struggling plants, weekly streaks, and reliability fixes." />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3c-5 4-8 9-8 13a8 8 0 0 0 16 0c0-4-3-9-8-13z M12 3v18' stroke='%233FD975' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div id="confirm-banner" role="status" aria-live="polite">
+    <span class="b-inner">
+      <svg class="check" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Email confirmed. Welcome to PlantAI. You can return to the app and sign in.
+    </span>
+  </div>
+
+  <div class="nav-wrap">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav-brand" href="../" aria-label="PlantAI home">
+        <svg class="mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 3c-5 4-8 9-8 13a8 8 0 0 0 16 0c0-4-3-9-8-13z M12 3v18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Plant<em>AI</em></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="./" aria-current="page">Updates</a></li>
+        <li><a href="../#getting-started">Start</a></li>
+        <li><a href="../#faq">FAQ</a></li>
+        <li><a href="../privacy.html">Privacy</a></li>
+        <li><a href="../terms.html">Terms</a></li>
+      </ul>
+      <a class="nav-cta" href="https://apps.apple.com/app/id6771919979" target="_blank" rel="noopener">
+        <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        Download
+      </a>
+      <button class="nav-toggle" type="button" aria-controls="nav-overlay" aria-expanded="false" aria-label="Open menu">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </nav>
+  </div>
+
+  <div id="nav-overlay" class="nav-overlay" role="dialog" aria-modal="true" aria-label="Menu">
+    <ul>
+      <li><a href="./" aria-current="page">Updates</a></li>
+      <li><a href="../#getting-started">Get started</a></li>
+      <li><a href="../#faq">FAQ</a></li>
+      <li><a href="../#contact">Contact</a></li>
+      <li><a href="../privacy.html">Privacy</a></li>
+      <li><a href="../terms.html">Terms</a></li>
+    </ul>
+    <span class="meta">official.plantai@gmail.com</span>
+  </div>
+
+  <main id="main">
+
+    <section class="detail-hero">
+      <div class="container">
+
+        <a class="back" href="./">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          All updates
+        </a>
+
+        <div class="detail-hero-grid hero-stage">
+
+          <div>
+            <span class="ver-prefix">Preview</span>
+            <span class="ver-mega">v1<em>.2</em></span>
+            <div class="ver-meta">
+              <span class="pill pill--next">Coming soon</span>
+              <span class="pill" style="font-family: var(--font-mono); font-size: var(--fs-meta); border: 1px solid var(--leaf-line); color: var(--ink-300); padding: 0.4rem 0.85rem; border-radius: 100px;">Next release</span>
+            </div>
+          </div>
+
+          <div>
+            <h1 class="subtitle">Proof your care is <em>working.</em></h1>
+            <p class="lead">A smarter AI, more consistent health scores, and a brand-new AI Care Plan for the plants that need extra help. Below is a preview of what's coming.</p>
+
+            <div class="preview-notice">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 9v4M12 17h.01M3 12a9 9 0 1 1 18 0 9 9 0 0 1-18 0z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span><strong>Preview, not yet shipped.</strong> Features below are in active development and subject to change before release.</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-group">
+      <div class="container">
+        <div class="g-head reveal">
+          <h2>A smarter, faster <em>AI.</em></h2>
+          <p class="g-lead">A newer model, smaller payloads, and analysis that returns in seconds instead of the long pause you sometimes see today.</p>
+        </div>
+
+        <div class="feature-list reveal">
+
+          <article class="feature-item">
+            <h3>Switching to Gemini 3.5 Flash</h3>
+            <p>A newer model with stronger vision accuracy and lower latency. The kind of model upgrade you feel the moment you open the app.</p>
+          </article>
+
+          <article class="feature-item">
+            <h3>Image compression for quicker results</h3>
+            <p>Photos are resized before the AI looks at them, so analysis comes back in seconds rather than waiting around for a multi-second spinner.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-group">
+      <div class="container">
+        <div class="g-head reveal">
+          <h2>Consistent, explainable <em>health scores.</em></h2>
+          <p class="g-lead">The score is the y-axis of your plant's story. We're making it stable enough to actually trust over time.</p>
+        </div>
+
+        <div class="feature-list reveal">
+
+          <article class="feature-item">
+            <h3>Same photo, same score</h3>
+            <p>Today, re-opening the app can occasionally produce a slightly different score for a photo you've already taken. v1.2 locks the score in: the same photo always returns the same number, every time.</p>
+          </article>
+
+          <article class="feature-item">
+            <h3>One-line explanations</h3>
+            <p>Every score now comes with a short, plain-language note about what the AI saw, like <em>“84 · leaves firm, slight tip-browning.”</em> So you know not just the number, but why.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-group">
+      <div class="container">
+        <div class="g-head reveal">
+          <h2>AI Care <em>Plan.</em></h2>
+          <p class="g-lead">A brand-new feature for plants that need extra help. When a plant's score drops, PlantAI can build it a personalised recovery plan.</p>
+        </div>
+
+        <div class="feature-list reveal">
+
+          <article class="feature-item">
+            <h3>Get a Care Plan</h3>
+            <p>When a plant's health drops below 75 percent, a <em>Get Care Plan</em> button appears on its Plant Profile. Tap it and PlantAI builds a recovery plan tuned to what it's seeing.</p>
+          </article>
+
+          <article class="feature-item">
+            <h3>A diagnosis you can read</h3>
+            <p>Every care plan opens with a short, plain-language diagnosis of what's likely going wrong, so you understand the situation before you treat it.</p>
+          </article>
+
+          <article class="feature-item">
+            <h3>Weekly recovery actions</h3>
+            <p>A clear, two-week plan: immediate actions, a weekly schedule, recommended treatments or supplements, what to monitor, and an estimate of how long recovery should take.</p>
+          </article>
+
+          <article class="feature-item">
+            <h3>Persistent and adaptive</h3>
+            <p>Your care plan stays with the plant until it recovers above 75 percent. If health drops again later, a new plan picks up where the last one left off.</p>
+          </article>
+
+          <article class="feature-item">
+            <h3>Recovery celebration</h3>
+            <p>When your plant climbs back above 75 percent, you get a small, well-earned notification: <em>“Your plant is thriving again.”</em> The kind of moment a tracker should mark.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-group">
+      <div class="container">
+        <div class="g-head reveal">
+          <h2>Weekly streaks, gentle <em>rewards.</em></h2>
+          <p class="g-lead">A new check-in cadence that rewards consistency without nagging. Five seconds a week is the whole ask.</p>
+        </div>
+
+        <div class="feature-list reveal">
+
+          <article class="feature-item">
+            <h3>Weekly check-in streak</h3>
+            <p>A streak that grows each week you check in on your plants, with small unlocks along the way (badges, extra Care Plan insights, and other quiet rewards).</p>
+          </article>
+
+          <article class="feature-item">
+            <h3>The five-second weekly promise</h3>
+            <p>Onboarding spells it out: ongoing tracking takes about five seconds a week. Snap one photo, log it, done. The streak does the rest.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-group">
+      <div class="container">
+        <div class="g-head reveal">
+          <h2>Smart check-in <em>reminders.</em></h2>
+          <p class="g-lead">Context-aware nudges that show up only when there's something useful to do.</p>
+        </div>
+
+        <div class="feature-list reveal">
+
+          <article class="feature-item">
+            <h3>Post-watering photo prompt</h3>
+            <p>After you log a watering on a struggling plant, PlantAI prompts you to take a quick health photo so the recovery can be tracked from that moment forward.</p>
+          </article>
+
+          <article class="feature-item">
+            <h3>Calmer cadence for healthy plants</h3>
+            <p>Plants that are thriving only get the gentle weekly check-in. No extra prompts after each watering, so the app stays out of your way when there's nothing to fix.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-group">
+      <div class="container">
+        <div class="g-head reveal">
+          <h2>Reliability &amp; <em>polish.</em></h2>
+          <p class="g-lead">The small things that quietly make the app feel more solid every time you open it.</p>
+        </div>
+
+        <div class="feature-list reveal">
+
+          <article class="feature-item">
+            <h3>Persistent plant photos</h3>
+            <p>A fix for a reported issue where plant photos could disappear over time. Photos are now reliably saved and loaded from local storage, so what you capture stays put.</p>
+          </article>
+
+          <article class="feature-item">
+            <h3>Liquid Glass tab bar</h3>
+            <p>The floating tab bar adopts Apple's iOS 26 Liquid Glass material for a translucent, light-bending finish that matches the rest of the system.</p>
+          </article>
+
+          <article class="feature-item">
+            <h3>Smarter review prompts</h3>
+            <p>The in-app review request now fires at one well-chosen moment — your first genuinely satisfying scan — instead of after a fixed count.</p>
+          </article>
+
+          <article class="feature-item">
+            <h3>Quality-of-life improvements</h3>
+            <p>Plus the usual sweep of small bug fixes, copy tweaks, and stability work across the app.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a class="nav-brand" href="../" aria-label="PlantAI home">
+            <svg class="mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 3c-5 4-8 9-8 13a8 8 0 0 0 16 0c0-4-3-9-8-13z M12 3v18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Plant<em>AI</em></span>
+          </a>
+          <p>Your AI plant health companion. Identify, diagnose, and grow with confidence. Built for iOS.</p>
+        </div>
+        <div class="footer-col">
+          <h5>App</h5>
+          <ul>
+            <li><a href="https://apps.apple.com/app/id6771919979" target="_blank" rel="noopener">Download</a></li>
+            <li><a href="./">Updates</a></li>
+            <li><a href="../#getting-started">Get started</a></li>
+            <li><a href="../#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="../#contact">Contact</a></li>
+            <li><a href="mailto:official.plantai@gmail.com">Email us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="../privacy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <svg class="footer-deco" viewBox="0 0 1200 60" fill="none" aria-hidden="true" preserveAspectRatio="none">
+        <path d="M0 30 Q 100 10 200 30 T 400 30 T 600 30 T 800 30 T 1000 30 T 1200 30" stroke="currentColor" stroke-width="1" opacity="0.55"/>
+        <path d="M0 38 Q 100 20 200 38 T 400 38 T 600 38 T 800 38 T 1000 38 T 1200 38" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+      </svg>
+      <div class="footer-bottom">
+        <span>© 2026 PlantAI · All rights reserved</span>
+        <span>v1.1.0 · iOS</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/site.js" defer></script>
+</body>
+</html>

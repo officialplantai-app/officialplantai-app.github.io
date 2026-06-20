@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0B1C12" />
+  <title>PlantAI · AI plant health, diagnosed.</title>
+  <meta name="description" content="Identify your plants, diagnose their health, and care for them with confidence. PlantAI is an AI-powered plant health companion for iOS." />
+
+  <meta property="og:title" content="PlantAI · AI plant health, diagnosed." />
+  <meta property="og:description" content="Identify, diagnose, and care for your plants with AI. Available on the App Store." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://officialplantai-app.github.io/" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3c-5 4-8 9-8 13a8 8 0 0 0 16 0c0-4-3-9-8-13z M12 3v18' stroke='%233FD975' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Email-confirmation success banner (Supabase redirect) -->
+  <div id="confirm-banner" role="status" aria-live="polite">
+    <span class="b-inner">
+      <svg class="check" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Email confirmed. Welcome to PlantAI. You can return to the app and sign in.
+    </span>
+  </div>
+
+  <!-- Floating pill nav -->
+  <div class="nav-wrap">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav-brand" href="./" aria-label="PlantAI home">
+        <svg class="mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 3c-5 4-8 9-8 13a8 8 0 0 0 16 0c0-4-3-9-8-13z M12 3v18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Plant<em>AI</em></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="updates/" >Updates</a></li>
+        <li><a href="#getting-started">Start</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+      </ul>
+      <a class="nav-cta" href="https://apps.apple.com/app/id6771919979" target="_blank" rel="noopener">
+        <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        Download
+      </a>
+      <button class="nav-toggle" type="button" aria-controls="nav-overlay" aria-expanded="false" aria-label="Open menu">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Mobile overlay menu -->
+  <div id="nav-overlay" class="nav-overlay" role="dialog" aria-modal="true" aria-label="Menu">
+    <ul>
+      <li><a href="updates/">Updates</a></li>
+      <li><a href="#getting-started">Get started</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="terms.html">Terms</a></li>
+    </ul>
+    <span class="meta">official.plantai@gmail.com</span>
+  </div>
+
+  <main id="main">
+
+    <!-- ─── HERO ────────────────────────────────────────────── -->
+    <section class="hero">
+      <div class="container">
+
+        <!-- Topographic SVG corner decoration -->
+        <svg class="topo-corner" viewBox="0 0 320 320" aria-hidden="true">
+          <g fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M0 80 Q 80 60 160 80 T 320 80"/>
+            <path d="M0 110 Q 80 90 160 110 T 320 110" opacity="0.85"/>
+            <path d="M0 140 Q 80 120 160 140 T 320 140" opacity="0.7"/>
+            <path d="M0 170 Q 80 150 160 170 T 320 170" opacity="0.55"/>
+            <path d="M0 200 Q 80 180 160 200 T 320 200" opacity="0.4"/>
+            <path d="M0 230 Q 80 210 160 230 T 320 230" opacity="0.25"/>
+          </g>
+        </svg>
+
+        <div class="hero-grid">
+
+          <div class="hero-stage">
+            <p class="hero-eyebrow">
+              <span class="dot" aria-hidden="true"></span>
+              v1.1 now live ·
+              <a href="updates/v1-1.html">see what shipped</a>
+            </p>
+
+            <h1 class="mega">
+              Plant health,<br/>
+              <em>diagnosed.</em>
+            </h1>
+
+            <p class="hero-tagline">
+              Your AI plant health companion. Identify species, spot stress early, grow with confidence.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary btn-lg" href="https://apps.apple.com/app/id6771919979" target="_blank" rel="noopener">
+                <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true" style="width:1.05em;height:1.05em"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+                Download on the App Store
+              </a>
+              <a class="btn btn-ghost btn-lg" href="#contact">
+                Contact support
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:0.9em;height:0.9em"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <aside class="hero-meta hero-meta-stage" aria-label="Release metadata">
+            <div class="hero-mark" aria-hidden="true">
+              <svg viewBox="0 0 88 88" fill="none">
+                <rect x="1.5" y="1.5" width="85" height="85" rx="14" stroke="currentColor" stroke-width="1.25" opacity="0.5"/>
+                <path d="M44 17c-14 11-22 24-22 35a22 22 0 0 0 44 0c0-11-8-24-22-35z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="none"/>
+                <path d="M44 17v54" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M10 76h6M72 76h6M10 12h6M72 12h6" stroke="currentColor" stroke-width="1" opacity="0.7"/>
+              </svg>
+            </div>
+
+            <dl>
+              <dt>Platform</dt><dd>iOS · iPhone</dd>
+              <dt>Version</dt><dd>v1.1.0</dd>
+              <dt>Released</dt><dd>2026·06</dd>
+              <dt>Price</dt><dd>Free</dd>
+              <dt>Engine</dt><dd>GPT-4o vision</dd>
+            </dl>
+
+            <p class="meta">
+              <a class="meta-link" href="updates/">Read the changelog →</a>
+            </p>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── WHAT'S NEW STRIP ───────────────────────────────── -->
+    <aside class="now-strip" aria-label="Latest update">
+      <div class="container">
+        <div class="now-inner reveal">
+          <div class="now-tag">
+            <span class="label">Now shipping</span>
+            <span class="ver">v1.1</span>
+          </div>
+          <p class="now-headline">
+            Sign in with Google and Apple, a redesigned floating tab bar, a CalAI-style onboarding flow, and a smarter <em>AI Check</em>.
+          </p>
+          <a class="now-link" href="updates/v1-1.html">
+            Read the release notes
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ─── GETTING STARTED ─────────────────────────────────── -->
+    <section id="getting-started">
+      <div class="container">
+        <div class="s-head s-head--split reveal">
+          <div>
+            <span class="kicker">Onboarding</span>
+            <h2>Six steps from install to <em>thriving</em>.</h2>
+          </div>
+          <p class="lead">Everything you need to begin caring for your plants with PlantAI. Each step takes seconds; the AI does the rest.</p>
+        </div>
+
+        <ol class="steps reveal">
+          <li class="step">
+            <span class="step-num">01</span>
+            <h3>Create an account</h3>
+            <p>Download PlantAI and sign up with email, Apple, or Google. Your plant data is tied to your account and synced securely to the cloud.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">02</span>
+            <h3>Add your first plant</h3>
+            <p>Tap the <strong>+</strong> button on the home screen and photograph your plant. PlantAI identifies the species instantly.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">03</span>
+            <h3>Run a health check</h3>
+            <p>Open the AI Check tab and take a photo. The AI reads leaves, stems, and colour to flag pests, diseases, and nutrient stress.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">04</span>
+            <h3>Set watering reminders</h3>
+            <p>PlantAI proposes a watering schedule tuned to each species and season. Approve it, and gentle push reminders take over.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">05</span>
+            <h3>Enable smart alerts</h3>
+            <p>Turn on alerts so PlantAI can notify you whenever a health issue is detected or a care task is overdue.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">06</span>
+            <h3>Track progress</h3>
+            <p>View each plant's full health timeline alongside past diagnoses, photos, and care logs on the Plant Profile screen.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ─── FAQ ─────────────────────────────────────────────── -->
+    <section id="faq">
+      <div class="container">
+        <div class="s-head s-head--split reveal">
+          <div>
+            <span class="kicker">Questions</span>
+            <h2>Common <em>questions.</em></h2>
+          </div>
+          <p class="lead">Quick answers to what people ask most. Can't find what you need? <a class="meta-link" href="#contact">Reach support →</a></p>
+        </div>
+
+        <div class="faq-group reveal">
+          <h3 class="faq-group-label">Plants &amp; AI</h3>
+          <div class="faq-list">
+
+            <details class="faq-item">
+              <summary>How do I add a new plant?
+                <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+              </summary>
+              <div class="faq-body">
+                <p>Tap the <strong>+</strong> icon in the top-right corner of the Home screen, then photograph your plant and PlantAI will identify it automatically.</p>
+                <p>Once identified, give your plant a nickname, confirm the species, and it will appear in your collection. You can add unlimited plants on any PlantAI plan.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>How accurate is the AI diagnosis?
+                <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+              </summary>
+              <div class="faq-body">
+                <p>PlantAI uses GPT-4o to analyse your plant photos. Accuracy is highest when images are taken in good lighting conditions.</p>
+                <p>For best results, ensure your photos are:</p>
+                <ul>
+                  <li>Well-lit with natural or soft artificial light</li>
+                  <li>In focus and taken at close range (20 to 40&nbsp;cm)</li>
+                  <li>Showing the affected area, like a yellowing leaf or spotted stem</li>
+                </ul>
+                <p>For rare species or unusual symptoms, we recommend confirming AI suggestions with a local horticulturalist.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>The camera isn't working. What should I do?
+                <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+              </summary>
+              <div class="faq-body">
+                <p>If the camera is unresponsive or the app cannot access it, try these steps in order:</p>
+                <p class="substep"><strong>Check permissions.</strong> Open your phone's Settings, find PlantAI, and ensure Camera access is set to <em>Allow</em>.</p>
+                <p class="substep"><strong>Restart the app.</strong> Fully close PlantAI and reopen it.</p>
+                <p class="substep"><strong>Restart your device.</strong> A reboot often resolves camera conflicts with other apps.</p>
+                <p class="substep"><strong>Check for updates.</strong> Open the App Store and update to the latest version of PlantAI.</p>
+                <p class="substep"><strong>Re-install the app.</strong> Your data is backed up to the cloud, so uninstalling and reinstalling will not cause data loss.</p>
+                <p>If the problem persists, <a href="#contact">contact support</a> with your device model and OS version.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>Can I use PlantAI without internet?
+                <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+              </summary>
+              <div class="faq-body">
+                <p>The camera and photo capture features work offline. You can photograph your plants at any time without a connection. AI analysis (species identification and health checks) requires an active internet connection, and results will not be available until connectivity is restored.</p>
+              </div>
+            </details>
+
+          </div>
+        </div>
+
+        <div class="faq-group reveal">
+          <h3 class="faq-group-label">Care &amp; reminders</h3>
+          <div class="faq-list">
+
+            <details class="faq-item">
+              <summary>How do watering reminders work?
+                <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+              </summary>
+              <div class="faq-body">
+                <p>When you add a plant, PlantAI automatically calculates a recommended watering interval based on the species and the current season.</p>
+                <p>You can customise the schedule any time by opening the plant's <strong>Plant Profile</strong> screen and adjusting frequency or time of day.</p>
+                <p>Reminders are delivered as push notifications. If you aren't receiving them, check that notifications are enabled for PlantAI in your device settings and that Do Not Disturb is not active. You can also manage all reminders from the <strong>Alerts</strong> tab inside the app.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>How do I log that I've watered my plant?
+                <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+              </summary>
+              <div class="faq-body">
+                <p>Go to the <strong>Dashboard</strong> and find your plant in the <strong>Care Due Today</strong> section, then tap <strong>Log Watering</strong>.</p>
+                <p>You can also log a watering from the <strong>Alerts</strong> tab: find the relevant care alert and tap <strong>Log Watering</strong> to mark it complete.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>What do the health status badges mean?
+                <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+              </summary>
+              <div class="faq-body">
+                <p>Each plant in your collection displays a health status badge so you can see its condition at a glance:</p>
+                <ul>
+                  <li><strong>Thriving</strong>: the plant is healthy and all care tasks are up to date.</li>
+                  <li><strong>Needs Water</strong>: a watering task is due or overdue.</li>
+                  <li><strong>Stress Detected</strong>: the AI has flagged a potential health issue that needs your attention.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>How do I delete a plant from my collection?
+                <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+              </summary>
+              <div class="faq-body">
+                <p>Swipe left on the plant card on the Home screen and tap <em>Delete</em>, or open the plant's profile, scroll to the bottom, and tap <em>Remove Plant</em>.</p>
+                <p>Deletion is permanent and removes all associated health check history, photos, and care logs.</p>
+              </div>
+            </details>
+
+          </div>
+        </div>
+
+        <div class="faq-group reveal">
+          <h3 class="faq-group-label">Account &amp; data</h3>
+          <div class="faq-list">
+
+            <details class="faq-item">
+              <summary>What data does PlantAI collect and how is it used?
+                <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+              </summary>
+              <div class="faq-body">
+                <p>PlantAI collects only what is necessary to deliver the service:</p>
+                <ul>
+                  <li><strong>Account data</strong>: email address and display name used to identify your account.</li>
+                  <li><strong>Plant photos</strong>: images you upload for identification and health analysis. These are processed by our AI and stored securely.</li>
+                  <li><strong>Usage analytics</strong>: anonymised, aggregated data used to improve the app. No personally identifiable information is included.</li>
+                </ul>
+                <p>We do <strong>not</strong> sell your data to advertisers. You can request full deletion of your account and data at any time by contacting <a href="mailto:official.plantai@gmail.com">official.plantai@gmail.com</a>. See the <a href="privacy.html">Privacy Policy</a> for full details.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>What happens to my data if I delete my account?
+                <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+              </summary>
+              <div class="faq-body">
+                <p>If you delete your account, all of your personal data, including your plant collection, health check history, photos, and care logs, is permanently deleted from our servers within 30 days. This action cannot be undone.</p>
+                <p>To request account deletion, contact us at <a href="mailto:official.plantai@gmail.com">official.plantai@gmail.com</a>.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>How do I update my name or email?
+                <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+              </summary>
+              <div class="faq-body">
+                <p>You can update your display name any time by going to the <strong>Settings</strong> screen and tapping your name.</p>
+                <p>Email address changes require additional verification to protect your account. Please contact us at <a href="mailto:official.plantai@gmail.com">official.plantai@gmail.com</a> and our support team will assist you.</p>
+              </div>
+            </details>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── CONTACT ─────────────────────────────────────────── -->
+    <section id="contact">
+      <div class="container">
+        <div class="s-head reveal">
+          <span class="kicker">Support</span>
+          <h2>Talk to a <em>real human.</em></h2>
+        </div>
+
+        <div class="contact-card reveal">
+          <div>
+            <h3>Email support</h3>
+            <p>Send us a description of your issue, with your device model, OS version, and any screenshots that may help. We read every message.</p>
+            <a class="email-display" href="mailto:official.plantai@gmail.com">official.plantai@gmail.com</a>
+            <span class="contact-meta">Typical reply in 24 to 48 hours</span>
+          </div>
+          <a class="btn btn-primary btn-lg" href="mailto:official.plantai@gmail.com">
+            Email us
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:0.9em;height:0.9em"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ────────────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+
+        <div class="footer-brand">
+          <a class="nav-brand" href="./" aria-label="PlantAI home">
+            <svg class="mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 3c-5 4-8 9-8 13a8 8 0 0 0 16 0c0-4-3-9-8-13z M12 3v18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Plant<em>AI</em></span>
+          </a>
+          <p>Your AI plant health companion. Identify, diagnose, and grow with confidence. Built for iOS.</p>
+        </div>
+
+        <div class="footer-col">
+          <h5>App</h5>
+          <ul>
+            <li><a href="https://apps.apple.com/app/id6771919979" target="_blank" rel="noopener">Download</a></li>
+            <li><a href="updates/">Updates</a></li>
+            <li><a href="#getting-started">Get started</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="mailto:official.plantai@gmail.com">Email us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Botanical line-art deco -->
+      <svg class="footer-deco" viewBox="0 0 1200 60" fill="none" aria-hidden="true" preserveAspectRatio="none">
+        <path d="M0 30 Q 100 10 200 30 T 400 30 T 600 30 T 800 30 T 1000 30 T 1200 30" stroke="currentColor" stroke-width="1" opacity="0.55"/>
+        <path d="M0 38 Q 100 20 200 38 T 400 38 T 600 38 T 800 38 T 1000 38 T 1200 38" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+      </svg>
+
+      <div class="footer-bottom">
+        <span>© 2026 PlantAI · All rights reserved</span>
+        <span>v1.1.0 · iOS</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/site.js" defer></script>
+</body>
+</html>

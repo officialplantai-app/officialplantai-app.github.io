@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0B1C12" />
+  <title>v1.1 · Bug Fixes, Sign In &amp; a Redesigned Experience · PlantAI</title>
+  <meta name="description" content="PlantAI v1.1 release notes. Sign in with Apple and Google, a redesigned tab bar and AI Check screen, and a long list of fixes." />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3c-5 4-8 9-8 13a8 8 0 0 0 16 0c0-4-3-9-8-13z M12 3v18' stroke='%233FD975' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div id="confirm-banner" role="status" aria-live="polite">
+    <span class="b-inner">
+      <svg class="check" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Email confirmed. Welcome to PlantAI. You can return to the app and sign in.
+    </span>
+  </div>
+
+  <div class="nav-wrap">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav-brand" href="../" aria-label="PlantAI home">
+        <svg class="mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 3c-5 4-8 9-8 13a8 8 0 0 0 16 0c0-4-3-9-8-13z M12 3v18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Plant<em>AI</em></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="./" aria-current="page">Updates</a></li>
+        <li><a href="../#getting-started">Start</a></li>
+        <li><a href="../#faq">FAQ</a></li>
+        <li><a href="../privacy.html">Privacy</a></li>
+        <li><a href="../terms.html">Terms</a></li>
+      </ul>
+      <a class="nav-cta" href="https://apps.apple.com/app/id6771919979" target="_blank" rel="noopener">
+        <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        Download
+      </a>
+      <button class="nav-toggle" type="button" aria-controls="nav-overlay" aria-expanded="false" aria-label="Open menu">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </nav>
+  </div>
+
+  <div id="nav-overlay" class="nav-overlay" role="dialog" aria-modal="true" aria-label="Menu">
+    <ul>
+      <li><a href="./" aria-current="page">Updates</a></li>
+      <li><a href="../#getting-started">Get started</a></li>
+      <li><a href="../#faq">FAQ</a></li>
+      <li><a href="../#contact">Contact</a></li>
+      <li><a href="../privacy.html">Privacy</a></li>
+      <li><a href="../terms.html">Terms</a></li>
+    </ul>
+    <span class="meta">official.plantai@gmail.com</span>
+  </div>
+
+  <main id="main">
+
+    <section class="detail-hero">
+      <div class="container">
+
+        <a class="back" href="./">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          All updates
+        </a>
+
+        <div class="detail-hero-grid hero-stage">
+
+          <div>
+            <span class="ver-prefix">Version</span>
+            <span class="ver-mega">v1<em>.1</em></span>
+            <div class="ver-meta">
+              <span class="pill pill--live">Live</span>
+              <span class="pill" style="font-family: var(--font-mono); font-size: var(--fs-meta); border: 1px solid var(--leaf-line); color: var(--ink-300); padding: 0.4rem 0.85rem; border-radius: 100px;">2026 · 06</span>
+            </div>
+          </div>
+
+          <div>
+            <h1 class="subtitle">Bug fixes, sign in, and a redesigned <em>experience.</em></h1>
+            <p class="lead">A foundational polish release. Two new sign-in methods, a freshly drawn floating tab bar with a raised AI Check button, a step-by-step onboarding flow, smarter image validation, and a long list of fixes from the first month of real use.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-group">
+      <div class="container">
+        <div class="g-head reveal">
+          <h2>Bug <em>fixes.</em></h2>
+          <p class="g-lead">Sharp edges from the v1.0 launch, rounded off. Each of these came from real user reports in the first weeks.</p>
+        </div>
+
+        <div class="feature-list reveal">
+
+          <article class="feature-item">
+            <h3>Email confirmation flow</h3>
+            <p>The Supabase redirect now lands cleanly on the support site with a green "Email confirmed" banner, so you know you can return to the app and sign in.</p>
+          </article>
+
+          <article class="feature-item">
+            <h3>AI plant validation</h3>
+            <p>Before analysis, GPT-4o now checks whether your photo actually shows a real plant. Artificial plants, blurry frames, and other objects are caught up front instead of producing a confident-sounding wrong answer.</p>
+          </article>
+
+          <article class="feature-item">
+            <h3>Progress bar accuracy</h3>
+            <p>The analysis progress bar and the percentage counter now share a single animated source, so they stay locked in step from 0 to 100 percent.</p>
+          </article>
+
+          <article class="feature-item">
+            <h3>Redesigned "no plant detected" popup</h3>
+            <p>When the AI doesn't see a plant, the message now appears as a solid bottom-sheet popup instead of an overlay floating on the camera viewfinder. Clearer, less startling, easier to act on.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-group">
+      <div class="container">
+        <div class="g-head reveal">
+          <h2>Sign in &amp; <em>onboarding.</em></h2>
+          <p class="g-lead">Three ways in, a step-by-step welcome flow, and full account deletion for compliance with Apple's privacy rules.</p>
+        </div>
+
+        <div class="feature-list reveal">
+
+          <article class="feature-item">
+            <h3>CalAI-style onboarding</h3>
+            <p>A multi-step welcome flow with benefit screens and personalisation questions, ending with account creation. You see the value before you're asked to sign up.</p>
+          </article>
+
+          <article class="feature-item">
+            <h3>Sign in with Google</h3>
+            <p>Google OAuth via Supabase. One tap to create or sign in to your PlantAI account.</p>
+          </article>
+
+          <article class="feature-item">
+            <h3>Sign in with Apple</h3>
+            <p>Native Apple authentication via expo-apple-authentication. Use your Apple ID with Hide My Email if you'd rather not share your real address.</p>
+          </article>
+
+          <article class="feature-item">
+            <h3>Account deletion</h3>
+            <p>Full account and data deletion from inside Settings. Hits Apple's compliance requirement and gives you a real "off switch" any time you want it.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-group">
+      <div class="container">
+        <div class="g-head reveal">
+          <h2>UI <em>overhaul.</em></h2>
+          <p class="g-lead">A redrawn tab bar, a fresh AI Check screen, and motion that finally feels native.</p>
+        </div>
+
+        <div class="feature-list reveal">
+
+          <article class="feature-item">
+            <h3>Redesigned floating tab bar</h3>
+            <p>A dark pill that floats above the content with a raised green AI Check button at the centre. A sliding indicator follows the active tab so you always know where you are.</p>
+          </article>
+
+          <article class="feature-item">
+            <h3>AI Check screen redesign</h3>
+            <p>A full-screen camera with a fixed dark bottom panel, an amber tip bar that surfaces capture advice, and a cleaner plant selector for choosing which plant you're checking.</p>
+          </article>
+
+          <article class="feature-item">
+            <h3>Spring animations</h3>
+            <p>Apple-style press animations on every touchable element across the app. Small, fast, satisfying.</p>
+          </article>
+
+          <article class="feature-item">
+            <h3>Haptic feedback</h3>
+            <p>Light, medium, and success haptics on the interactions that matter most: capture, log watering, complete an alert.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-group">
+      <div class="container">
+        <div class="g-head reveal">
+          <h2>App Store &amp; <em>settings.</em></h2>
+          <p class="g-lead">A polish pass aimed at the App Store listing and the small but important corners of Settings.</p>
+        </div>
+
+        <div class="feature-list reveal">
+
+          <article class="feature-item">
+            <h3>New App Store screenshots</h3>
+            <p>Retaken with the redesigned UI and caption text overlays so the listing actually represents the current app.</p>
+          </article>
+
+          <article class="feature-item">
+            <h3>Updated support URL</h3>
+            <p>The App Store support link now points to <a href="../" style="color: var(--leaf); border-bottom: 1px solid var(--leaf-line);">officialplantai-app.github.io</a>, not a placeholder.</p>
+          </article>
+
+          <article class="feature-item">
+            <h3>Contact support email</h3>
+            <p>The Settings screen now has a tappable mailto link in the Support section. One tap, your message composer opens addressed to <span style="font-family: var(--font-mono); font-size: 0.92em; color: var(--leaf);">official.plantai@gmail.com</span>.</p>
+          </article>
+
+          <article class="feature-item">
+            <h3>In-app review prompt</h3>
+            <p>SKStoreReviewAPI now triggers after your third completed health check, so the request only appears once you've actually used the AI.</p>
+          </article>
+
+          <article class="feature-item">
+            <h3>Camera permission description</h3>
+            <p>The permission string now clearly explains that the camera is used for AI plant identification, in line with Apple's privacy guidance.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a class="nav-brand" href="../" aria-label="PlantAI home">
+            <svg class="mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 3c-5 4-8 9-8 13a8 8 0 0 0 16 0c0-4-3-9-8-13z M12 3v18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Plant<em>AI</em></span>
+          </a>
+          <p>Your AI plant health companion. Identify, diagnose, and grow with confidence. Built for iOS.</p>
+        </div>
+        <div class="footer-col">
+          <h5>App</h5>
+          <ul>
+            <li><a href="https://apps.apple.com/app/id6771919979" target="_blank" rel="noopener">Download</a></li>
+            <li><a href="./">Updates</a></li>
+            <li><a href="../#getting-started">Get started</a></li>
+            <li><a href="../#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="../#contact">Contact</a></li>
+            <li><a href="mailto:official.plantai@gmail.com">Email us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="../privacy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <svg class="footer-deco" viewBox="0 0 1200 60" fill="none" aria-hidden="true" preserveAspectRatio="none">
+        <path d="M0 30 Q 100 10 200 30 T 400 30 T 600 30 T 800 30 T 1000 30 T 1200 30" stroke="currentColor" stroke-width="1" opacity="0.55"/>
+        <path d="M0 38 Q 100 20 200 38 T 400 38 T 600 38 T 800 38 T 1000 38 T 1200 38" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+      </svg>
+      <div class="footer-bottom">
+        <span>© 2026 PlantAI · All rights reserved</span>
+        <span>v1.1.0 · iOS</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/site.js" defer></script>
+</body>
+</html>
