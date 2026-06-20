@@ -7,11 +7,11 @@
   <title>Privacy Policy · PlantAI</title>
   <meta name="description" content="The PlantAI Privacy Policy. What we collect, how it's used, and how to control your data." />
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3c-5 4-8 9-8 13a8 8 0 0 0 16 0c0-4-3-9-8-13z M12 3v18' stroke='%233FD975' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M4 20C4 11 12 4 20 4c0 8-8 16-16 16Z' fill='%233FD975' fill-opacity='0.18' stroke='%233FD975' stroke-width='1.5' stroke-linejoin='round'/%3E%3Cpath d='M9.5 10.8l.4 1.3 1.3.4-1.3.4-.4 1.3-.4-1.3-1.3-.4 1.3-.4z' fill='%233FD975'/%3E%3Ccircle cx='13.5' cy='12.5' r='1.7' stroke='%233FD975' stroke-width='1.3' fill='none'/%3E%3Cpath d='M12.3 13.7L10.6 15.4' stroke='%233FD975' stroke-width='1.3' stroke-linecap='round'/%3E%3C/svg%3E" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
@@ -31,7 +31,7 @@
     <nav class="nav" aria-label="Primary">
       <a class="nav-brand" href="./" aria-label="PlantAI home">
         <svg class="mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M12 3c-5 4-8 9-8 13a8 8 0 0 0 16 0c0-4-3-9-8-13z M12 3v18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 20C4 11 12 4 20 4c0 8-8 16-16 16Z" fill="currentColor" fill-opacity="0.14" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9.5 10.8l.4 1.3 1.3.4-1.3.4-.4 1.3-.4-1.3-1.3-.4 1.3-.4z" fill="currentColor"/><circle cx="13.5" cy="12.5" r="1.7" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M12.3 13.7L10.6 15.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
         </svg>
         <span>Plant<em>AI</em></span>
       </a>
@@ -43,8 +43,8 @@
         <li><a href="terms.html">Terms</a></li>
       </ul>
       <a class="nav-cta" href="https://apps.apple.com/app/id6771919979" target="_blank" rel="noopener">
-        <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-        Download
+        Get the app
+        <span class="arrow" aria-hidden="true">→</span>
       </a>
       <button class="nav-toggle" type="button" aria-controls="nav-overlay" aria-expanded="false" aria-label="Open menu">
         <svg class="icon-open" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
@@ -95,62 +95,55 @@
         <!-- TL;DR -->
         <div class="policy-tldr reveal">
           <div class="item">
-            <span class="meta">Encryption</span>
-            <h4>Your data is encrypted</h4>
-            <p>TLS 1.3 in transit, AES-256 at rest on our servers.</p>
+            <span class="meta">On-device</span>
+            <h4>Your plant data stays on your device</h4>
+            <p>Photos, health history, and watering logs are stored locally in SQLite, not on our servers.</p>
           </div>
           <div class="item">
-            <span class="meta">No ad sales</span>
-            <h4>Never sold to advertisers</h4>
-            <p>We do not sell, rent, or trade your personal information for ads. Ever.</p>
+            <span class="meta">No tracking</span>
+            <h4>No analytics or usage tracking</h4>
+            <p>We do not collect analytics or behavioural data. There is nothing to sell because nothing is collected.</p>
           </div>
           <div class="item">
             <span class="meta">Right to delete</span>
-            <h4>Right to deletion</h4>
-            <p>Request full deletion of your account and data any time by emailing support.</p>
+            <h4>Delete your account any time</h4>
+            <p>Erase your account and all associated data from the app's Settings screen or by emailing us.</p>
           </div>
         </div>
 
         <article class="prose reveal">
 
-          <h2><span class="n">01</span>Who we are</h2>
-          <p>PlantAI (“we”, “our”, or “us”) is the developer of the PlantAI mobile application. For privacy inquiries contact us at <a href="mailto:official.plantai@gmail.com">official.plantai@gmail.com</a>.</p>
+          <h2><span class="n">01</span>Overview</h2>
+          <p>PlantAI (“we”, “our”, or “the app”) is committed to protecting your privacy. This policy explains what data we collect, how we use it, and your rights regarding your information.</p>
 
           <h2><span class="n">02</span>Information we collect</h2>
-          <p>We collect the following categories of information when you use PlantAI:</p>
-          <ul>
-            <li><strong>Account information:</strong> email address and display name provided at registration.</li>
-            <li><strong>Plant data:</strong> photos, nicknames, species identification results, health check reports, and care notes you create.</li>
-            <li><strong>Device information:</strong> device model, operating system version, and app version, used for bug diagnosis and compatibility improvements.</li>
-            <li><strong>Analytics:</strong> anonymised and aggregated usage data (screens visited, features used) with no personally identifiable information.</li>
-          </ul>
+          <p><strong>Account Information:</strong> When you create an account, we collect your email address and name. This is stored securely via Supabase, our authentication provider.</p>
+          <p><strong>Plant Data:</strong> Photos you take of your plants, AI-generated health assessments, watering logs, and plant profiles are stored locally on your device using SQLite. Photos remain on your device and are not uploaded to our servers.</p>
+          <p><strong>Usage Data:</strong> We do not collect analytics or usage tracking data.</p>
 
           <h2><span class="n">03</span>How we use your information</h2>
-          <ul>
-            <li>To provide, maintain, and improve the PlantAI service.</li>
-            <li>To send care reminders, alerts, and in-app notifications you have opted into.</li>
-            <li>To train and improve our AI models using anonymised, aggregated image data. Individual photos are never attributed to a user in training datasets.</li>
-            <li>To respond to support requests and troubleshoot technical issues.</li>
-            <li>To comply with legal obligations.</li>
-          </ul>
+          <p>Your email and name are used solely for account authentication and personalisation within the app.</p>
+          <p>Plant photos are sent to OpenRouter's API (using OpenAI's GPT-4o model) for AI analysis. Photos are processed and not stored by us after analysis.</p>
+          <p>Notification preferences are stored locally on your device.</p>
 
-          <h2><span class="n">04</span>Data sharing</h2>
-          <p>We do not sell your personal data. We may share limited data with trusted service providers (cloud hosting, analytics) strictly to operate the service, under data processing agreements that prohibit them from using your data for any other purpose. We may disclose data if required by law or to protect our legal rights.</p>
+          <h2><span class="n">04</span>Third party services</h2>
+          <p><strong>Supabase</strong> — authentication provider. View their privacy policy at <a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a>.</p>
+          <p><strong>OpenRouter / OpenAI</strong> — AI image analysis. Photos are transmitted securely for processing. View OpenAI's privacy policy at <a href="https://openai.com/privacy" target="_blank" rel="noopener">openai.com/privacy</a>.</p>
 
-          <h2><span class="n">05</span>Data retention</h2>
-          <p>We retain your account data and plant records for as long as your account is active. If you delete your account, we will permanently remove your personal data within 30 days, except where retention is required by law.</p>
+          <h2><span class="n">05</span>Data storage</h2>
+          <p>All plant data, photos, and health history are stored locally on your device. We do not have access to your plant photos or health data.</p>
 
-          <h2><span class="n">06</span>Your rights</h2>
-          <p>Depending on your location you may have the right to access, correct, export, or delete your personal data. To exercise any of these rights, email us at <a href="mailto:official.plantai@gmail.com">official.plantai@gmail.com</a>. We will respond within 30 days.</p>
+          <h2><span class="n">06</span>Data deletion</h2>
+          <p>You can delete your account and all associated data at any time by contacting us at <a href="mailto:official.plantai@gmail.com">official.plantai@gmail.com</a> or through the app's Settings screen.</p>
 
           <h2><span class="n">07</span>Children's privacy</h2>
-          <p>PlantAI is not directed at children under 13. We do not knowingly collect personal data from children. If you believe we have inadvertently collected such data, please contact us immediately.</p>
+          <p>PlantAI is not directed at children under 13. We do not knowingly collect data from children under 13.</p>
 
           <h2><span class="n">08</span>Changes to this policy</h2>
-          <p>We may update this policy from time to time. When we make material changes we will notify you via the app or email. Continued use of PlantAI after changes take effect constitutes acceptance of the revised policy.</p>
+          <p>We may update this policy occasionally. We will notify you of significant changes through the app.</p>
 
           <h2><span class="n">09</span>Contact</h2>
-          <p>For any privacy-related questions or to submit a data request, contact us at <a href="mailto:official.plantai@gmail.com">official.plantai@gmail.com</a>.</p>
+          <p>For any privacy-related questions, contact us at <a href="mailto:official.plantai@gmail.com">official.plantai@gmail.com</a>.</p>
 
         </article>
 
@@ -165,7 +158,7 @@
         <div class="footer-brand">
           <a class="nav-brand" href="./" aria-label="PlantAI home">
             <svg class="mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M12 3c-5 4-8 9-8 13a8 8 0 0 0 16 0c0-4-3-9-8-13z M12 3v18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M4 20C4 11 12 4 20 4c0 8-8 16-16 16Z" fill="currentColor" fill-opacity="0.14" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9.5 10.8l.4 1.3 1.3.4-1.3.4-.4 1.3-.4-1.3-1.3-.4 1.3-.4z" fill="currentColor"/><circle cx="13.5" cy="12.5" r="1.7" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M12.3 13.7L10.6 15.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
             </svg>
             <span>Plant<em>AI</em></span>
           </a>
